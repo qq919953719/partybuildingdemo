@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="18dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="姓名"
+        android:textColor="#676767"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_all_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="总学时"
+        android:textColor="#676767"
+        android:textSize="13sp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_train_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="培训班学时"
+        android:textColor="#676767"
+        android:textSize="13sp"
+        android:layout_marginLeft="5dp"/>
+    <TextView
+        android:id="@+id/tv_my_report_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="自主上报学时"
+        android:textColor="#676767"
+        android:textSize="13sp"
+        android:layout_marginLeft="5dp"/>
+</LinearLayout>

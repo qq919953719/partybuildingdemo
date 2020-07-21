@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MultilevelTreeLibrary/MultilevelTreeLibrary.iml" filepath="$PROJECT_DIR$/MultilevelTreeLibrary/MultilevelTreeLibrary.iml" group="PartyBuildingLHDemo/MultilevelTreeLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PartyBuildingLHDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/PartyBuildingLHDemo.iml" group="PartyBuildingLHDemo" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="PartyBuildingLHDemo/app" />
+      <module fileurl="file://$PROJECT_DIR$/ckvideoplayer/ckvideoplayer.iml" filepath="$PROJECT_DIR$/ckvideoplayer/ckvideoplayer.iml" group="PartyBuildingLHDemo/ckvideoplayer" />
+      <module fileurl="file://$PROJECT_DIR$/picktime/picktime.iml" filepath="$PROJECT_DIR$/picktime/picktime.iml" group="PartyBuildingLHDemo/picktime" />
+    </modules>
+  </component>
+</project>

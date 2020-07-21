@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/sel_time_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="11dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_sel_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发布时间优先"
+                android:textColor="#e51f20"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/iv_sel_time"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_tab_arrow_select"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sel_zan_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="7dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_sel_zan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点赞量优先"
+                android:textColor="#323232"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/iv_sel_zan"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_tab_arrow_unselect"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider2"/>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

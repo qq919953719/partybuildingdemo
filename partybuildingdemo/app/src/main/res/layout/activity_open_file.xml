@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.longhoo.net.manageservice.ui.OpenFileActivity">
+    <include android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/layout_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/iv_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/file_normal"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/tv_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@drawable/jz_bottom_seek_progress"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:visibility="gone"
+                android:max="100"/>
+            <TextView
+                android:id="@+id/tv_down"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="下载"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_red_solid_25" />
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tv_down_other"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="分享"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:enabled="false"
+            android:layout_marginTop="8dp"
+            android:textColor="#c5c5c5" />
+    </LinearLayout>
+
+</LinearLayout>

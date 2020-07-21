@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试题目"
+        android:textSize="16sp"
+        style="@style/singlineText"
+        android:textColor="@color/tab_select_color"/>
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="为进一步巩固19大精神的学习成果，龙虎网特举办专题学习活动"
+        android:textSize="14sp"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/tab_select_color"/>
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:background="@drawable/bg_red_solid_25"
+        android:layout_gravity="right"
+        android:text="进入测试"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textSize="12sp"
+        android:textColor="@color/white"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp" />
+</LinearLayout>

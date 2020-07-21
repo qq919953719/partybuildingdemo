@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_guide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".headline.ui.GuideActivity">
+
+    <com.longhoo.net.widget.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/bt_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="立即启用"
+        android:textColor="#e71e1e"
+        android:visibility="gone" />
+
+    <com.longhoo.net.widget.indicator.CircleIndicator
+        android:id="@+id/indicator_panel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        app:ci_background="@color/divider2"
+        app:ci_gravity="center"
+        app:ci_margin="5dp"
+        app:ci_mode="outside"
+        app:ci_radius="4dp"
+        app:ci_selected_background="@color/colorPrimary" />
+
+
+    <Button
+        android:id="@+id/bt_inenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shape_corner"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="立即开启"
+        android:textColor="#e71e1e"
+        android:textSize="20sp" />
+</RelativeLayout>

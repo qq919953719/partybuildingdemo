@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.longhoo.net">
+
+    <permission
+        android:name="com.longhoo.net.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" /> <!-- Required -->
+    <uses-permission android:name="com.longhoo.net.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 拨打电话权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- renren sso Permission for Unit Test -->
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" /> <!-- Optional for location -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:name">
+        <activity android:name=".partyaffairs.ui.ReleaseVoteActivity"></activity>
+        <activity android:name=".partyaffairs.ui.OpenPartyContentActivity" />
+        <activity android:name=".partyaffairs.ui.OpenPartyActivity" />
+        <activity android:name=".manageservice.ui.ReleasePartyNumberActivity" />
+        <activity android:name=".manageservice.ui.VideoActivity" />
+        <activity android:name=".study.ui.VerificationCodeActivity" />
+        <activity android:name=".study.ui.CurrentAffairsDetailActivity" />
+        <activity android:name=".study.ui.CurrentAffairsActivity" />
+        <activity android:name=".mine.ui.MyStudySortActivity" />
+        <activity android:name=".mine.ui.MyStudyReportIndexActivity" />
+        <activity android:name=".mine.ui.ScoreRuleActivity" />
+        <activity android:name=".mine.ui.SortScoreActivity" />
+        <activity android:name=".mine.ui.MyStudyReportActivity" />
+        <activity android:name=".manageservice.ui.MemberPublicContentActivity" />
+        <activity android:name=".manageservice.ui.MemberApplyActivity" />
+        <activity android:name=".manageservice.ui.MemberDevelopmentActivity" />
+        <activity android:name=".manageservice.ui.MemberPublicListActivity" />
+        <activity android:name=".manageservice.ui.MemberApplyListActivity" />
+        <activity android:name=".study.ui.TrainReportDetailsActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.longhoo.net.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL}" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_APPKEY}" />
+
+        <activity
+            android:name=".headline.ui.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".headline.ui.GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".headline.ui.MyCaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" /> <!-- Rich push 核心功能 since 2.0.6 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle" />
+        <activity
+            android:name=".manageservice.ui.OrgazationGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" /> <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.longhoo.net" />
+            </intent-filter>
+        </activity> <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service> <!-- since 3.0.9 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DataProvider"
+            android:authorities="com.longhoo.net.DataProvider"
+            android:exported="true" /> <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.longhoo.net" />
+            </intent-filter>
+        </service> <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+                <category android:name="com.longhoo.net" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver> <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" /> <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".utils.jpush.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.longhoo.net" />
+            </intent-filter>
+        </receiver> <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+        <receiver android:name=".utils.jpush.MyJPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.longhoo.net" />
+            </intent-filter>
+        </receiver> <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="${JPUSH_CHANNEL}" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="${JPUSH_APPKEY}" /> <!-- </>值来自开发者平台取得的AppKey -->
+        <activity
+            android:name=".headline.ui.PartybuildModelActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".headline.ui.SpecialNewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".headline.ui.NewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".headline.ui.PartyflzActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.WalkHealhActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.PartybuildgkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.CountryNewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.longhoo.net.login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".headline.ui.PartybuildxfDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.TaiZhangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.PartyCommunity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.ZiXunActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.PublishTopicActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.NoteTakingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.AppForPartyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.CommitForPartyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.PayMembershipDuesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.IntegralExchangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.DemocraticLifeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.ThirdLifeCointentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".partyaffairs.ui.ExchangeDetailActivity" />
+        <activity android:name=".partyaffairs.ui.ScoreDetailActivity" />
+        <activity
+            android:name=".manageservice.ui.OrgazationLifeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.VoteListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.VoteOptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.VoteOptionDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.SignUpForVoteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.OrgazationLifeCointentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.OrgazationPersonalActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.HuaTiContentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".manageservice.ui.CancelMeetingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.PartyFeeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.SetActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.PartyDisciplineSupervisionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.ApplyListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.ApprovalActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.ModifyPwdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.MyPartyCommunity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.SigninActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.MyExaminationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.ForgetPwdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".mine.ui.MyLibrayrActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".mine.ui.Change_MobileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".partyaffairs.ui.AssessmentandreviewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".widget.base.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 微信支付回调页面 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity android:name=".study.ui.ExaminationCenterActivity" />
+        <activity android:name=".study.ui.ExaminationDetailActivity" />
+        <activity android:name=".study.ui.QuestionActivity" />
+        <activity android:name=".study.ui.AnswerAnalysisActivity" />
+        <activity android:name=".partyaffairs.ui.LibraryActivity" />
+        <activity android:name=".partyaffairs.ui.LibraryDetailActivity" />
+        <activity
+            android:name=".study.ui.PartyVideoPlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/MeidiaTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".partyaffairs.ui.MemberShipRecordsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.InformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.OpenFileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.NotiNewsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.DocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.PartyMemberSQActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.OrganizationArchiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.NotificationDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".manageservice.ui.PayMoonListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.NoteListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.NoteDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.SuperviseDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".partyaffairs.ui.PartyReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.StudyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.FileNotiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.SelfExamAnalysisActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.ExamOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.ExamOrderItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".headline.ui.BasicStyleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.OrganizationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.StudyManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.OnlineExamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".supervision.ui.SecretReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.OffCampusTrainReportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".supervision.ui.SecretReportDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.MaterialReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.MeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.ActsEncrollActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.TrainCourseDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.ReportAwardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.PartyClassDisplayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.MyBranchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.DataShareingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.DataShareingDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".manageservice.ui.SpecialMeterialReportDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study.ui.VideoConferenceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".supervision.ui.ScoreRankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".supervision.ui.ActStatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mine.ui.ReleaseOrgLifeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".mine.ui.MyEnrollActivity" />
+        <activity android:name=".mine.ui.MyStudyArchivesActivity" />
+        <activity
+            android:name=".widget.base.VideoPlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/MeidiaTheme" />
+        <activity
+            android:name=".study.ui.VideoConDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/MeidiaTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".manageservice.ui.OrganizationLifedetailActivity" />
+        <activity android:name=".study.ui.StudyItemDetailActivity" />
+        <activity android:name=".widget.treelist.MultiLevelActivity" />
+        <activity android:name=".mine.ui.NoteEditActivity" />
+        <activity android:name=".mine.ui.MyTaskActivity" />
+        <activity android:name=".supervision.ui.SecretReportContentActivity" />
+        <activity android:name=".manageservice.ui.PreviewOfficeActivity" />
+        <activity android:name=".manageservice.ui.AwardDetailsActivity" />
+        <activity android:name=".study.ui.ActsEncrollDetailActivity" />
+        <activity android:name=".manageservice.ui.AddSummaryActivity" />
+        <activity android:name=".manageservice.ui.EditSummaryActivity" />
+    </application>
+
+</manifest>

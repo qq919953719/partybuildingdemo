@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:id="@+id/ll_net_error_panel">
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/init_net_work_error"
+    android:layout_marginTop="75dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#989898"
+        android:text="咦，您的网络貌似在开小差"
+        android:layout_marginTop="17dp"/>
+    <TextView
+        android:id="@+id/tv_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新加载"
+        android:textColor="@color/white"
+        android:background="@drawable/click_to_reload_bg"
+        android:textSize="13sp"
+        android:paddingLeft="11dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingRight="11dp"
+        android:layout_marginTop="21dp"/>
+</LinearLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.longhoo.net.partyaffairs.ui.ApprovalActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:navigationIcon="@drawable/left_arrow"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/singlineText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLength="12"
+                android:padding="1dp"
+                android:text="龙虎网党员之家"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:text="审批"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="请选择您的处理意见"
+                        android:textColor="@color/tab_select_color"
+                        android:textSize="17sp" />
+
+
+                    <Spinner
+                        android:id="@+id/iv_sel_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="12dp"
+                        android:drawablePadding="5dp"
+                        android:gravity="right"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/text2sss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:gravity="center"
+                        android:text="备注"
+                        android:textColor="@color/tab_select_color"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/et_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#f0f0f0"
+                        android:gravity="left"
+                        android:padding="12dp"
+                        android:textColor="@color/tab_select_color"
+                        android:textColorHint="#b3b3b3"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+
+                    android:background="#e1e1e1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/et_name"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="姓名"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_phone"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+
+                android:text="手机号码"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_id"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:text="身份证号码"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_reason"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="请填写申请理由"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_organaztion"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="党支部"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_referee"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="推荐人"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_company"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="所在单位"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/et_address"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_grey_solid_25"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="居住地址"
+                android:textColor="@color/tab_select_color"
+                android:textColorHint="#b3b3b3"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

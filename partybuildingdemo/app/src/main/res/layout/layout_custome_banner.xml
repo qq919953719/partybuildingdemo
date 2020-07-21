@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.longhoo.net.widget.NoScrollViewPager
+        android:id="@+id/layout_banner_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="190dp" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/layout_banner_viewpager"
+        android:background="@color/half_balck"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="12dp"
+        android:paddingTop="10dp">
+
+        <RelativeLayout
+            android:id="@+id/title_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:layout_toLeftOf="@id/layout_banner_points_group">
+            <TextView
+                android:id="@+id/tv_type"
+                style="@style/singlineText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@color/white"
+                android:padding="3dp"
+                android:text="专题"
+                android:textColor="#a30915"
+                android:textSize="11sp"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/singlineText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_type"
+                android:padding="3dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_banner_points_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

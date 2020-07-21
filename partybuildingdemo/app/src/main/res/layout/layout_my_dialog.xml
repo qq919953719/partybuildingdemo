@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_box"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+    <LinearLayout android:id="@+id/dialog_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4c4c4c"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:text="标题" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/dialog_cont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/dialog_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="20dp" >
+        <Button android:id="@+id/dialog_cancle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_touch"
+            android:text="取消"
+            android:textSize="18sp"
+            android:textColor="#434343"
+            android:gravity="center" />
+        <Button android:id="@+id/dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_touch"
+            android:text="确定"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="center" />
+    </LinearLayout>
+</LinearLayout>
